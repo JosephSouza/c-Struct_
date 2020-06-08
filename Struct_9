@@ -1,0 +1,50 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+#include<string.h>
+#include<ctype.h>
+#include<locale.h>
+
+struct cadastro //struct de cadastro de informações
+{
+	char rua[50];
+	int numero;
+	char bairro[50];
+	char cidade[50];
+	int cep;
+	char email[50];
+	int ddd;
+	int telefone;
+};
+
+struct cliente //struct de cliente
+{
+	char nome[50];
+	int idade;
+	int cpf;
+	int rg;
+	struct cadastro cadcli;
+};
+
+struct fornecedor //struct de fornecedores
+{
+	char razaosocial[50];
+	int cnpj;
+	int ie;
+	struct cadastro cadfor;
+};
+
+int main()
+{
+	setlocale(LC_ALL,"Portuguese");
+	system("chcp 1252 > nul");
+	
+	struct cliente c[5];
+	struct fornecedor f[5];
+	
+	
+	printf("O tamanho da struct cliente é %d bytes\n",sizeof(struct cliente));
+	printf("O tamanho da struct fornecedor é %d bytes\n",sizeof(struct fornecedor));
+	printf("O tamanho da struct c[] é %d bytes\n",sizeof(c));
+	printf("O tamanho da struct f[] é %d bytes\n",sizeof(f));
+}
